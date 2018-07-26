@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-debug.js">
+            
+        </script>
+        
+        
+    </head>
+
+    <body>
+
+<input data-bind="textInput:   fname" >
+        <input data-bind="textInput:   lname" >
+        
+        <p data-bind="text: fullName"></p>
+        
+        <script>
+            
+            function viewModel(){
+                this.fname=ko.observable("Vinay");
+                this.lname=ko.observable("Hegde");
+                this.calculateFname = () => this.fname()+" "+this.lname();                
+                this.fullName = ko.computed(this.calculateFname,this);
+        
+            }
+            var vm =new viewModel();
+            
+            setTimeout(
+                function (){
+                    //vm.animals.push({name:"Vinay",type:"Human"});
+                    vm.fname("VG");
+                },
+                1500
+                    
+            );
+            
+    ko.applyBindings(vm);      
+    
+        </script>
+        
+    
+    </body>
+    
+</html>

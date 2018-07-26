@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-debug.js">
+            
+        </script>
+        
+        
+    </head>
+
+    <body>
+        
+    
+
+        <table>
+            
+            <thead>
+            <th>Name</th>
+            <th>type</th>
+                
+            </thead>
+            
+            <tbody data-bind="foreach: animals">
+                <tr>
+                    <td data-bind="text: name"></td>
+                    <td data-bind="text: type"></td>
+                </tr>
+                
+            </tbody>
+            
+            
+        </table>
+        <button data-bind="click: add">Click to add</button>
+        <button data-bind="click: del">Click to del</button>
+    
+        
+        <script>
+            
+            function viewModel(){
+                this.animals = ko.observableArray([{
+                        name:"Tom",
+                        type:"cat"            
+                    },
+                    {   name:"Jerry",
+                        type:"mouse"            
+                    },
+                    {   name:"Spike",
+                        type:"dog"            
+                    }
+                    ]);
+
+                this.add =function (){
+                    //alert("Clicked");
+                     this.animals.push({name:"Alex",type:"Lion"})
+                }
+                
+                this.del =function (){
+                    //alert("Clicked");
+                     this.animals.pop();
+                }
+        
+            }
+            var vm =new viewModel();
+            
+            setTimeout(
+                function (){
+                    vm.animals.push({name:"Vinay",type:"Human"})
+                },
+                1500
+                    
+            )
+            
+    ko.applyBindings(vm);      
+    
+        </script>
+        
+    
+    </body>
+    
+</html>
