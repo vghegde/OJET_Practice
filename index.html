@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script   
+          src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+        <script>
+           /* 
+            function makeAddr(n){
+                return function (x){
+                    return x+n;
+                };
+            };
+            
+            var two = makeAddr(2);
+            var three = makeAddr(3);
+            
+            console.log(two(5));
+            console.log(three(8));
+            
+           
+           
+           var pro = new Promise(function(resolve,reject){
+                setTimeout(function(){
+                    //resolve();
+                    reject();
+                },1500);
+               
+           });
+           
+           
+           pro.then(   function(){
+               alert("Resolved");
+           }
+                   );
+           pro.catch(
+                     function(){
+               alert("reject");
+           }
+                   
+                   );
+             
+           */
+          
+          $(function(){
+              
+              $.fn.colorify= function(col){
+                  this.css('color',col)
+              }
+             
+        $('#my-btn').click(function (){
+              $('#name').colorify('blue');
+          }
+              );
+             // $("#name").css('background-color','blue');
+             // $("#name").css('color','red');
+          });
+          
+            
+            
+        </script>
+        <style>
+        
+            #name{
+                background-color: red;
+            }
+            .fruits{
+                background-color: blue;
+            }
+            
+        </style>
+        
+    </head>
+    <body>
+        
+        <div id = "name">
+            Elon Musk
+        </div>
+        
+        <ul>
+            <li class="fruits">
+                Apple
+            </li>
+            
+            <li class="fruits">
+                Orange
+            </li>
+            
+            <li class="fruits">
+                Grapes
+            </li>
+            
+        </ul>
+        
+        <button id="my-btn">Click Me!</button>
+        
+        <script>
+            
+            
+        </script>
+        
+    </body>
+</html>
